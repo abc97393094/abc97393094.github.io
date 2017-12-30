@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, 温小生, vvzr, 温泽荣" />
+  <meta name="keywords" content="JavaScript,前端," />
 
 
 
@@ -94,16 +94,21 @@
 
 
 
-<meta name="description" content="一个没有干货的假技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="愿做长风绕战旗">
-<meta property="og:url" content="http://wzrblog.com/index.html">
+<meta name="description" content="函数就是对象对，函数就是对象，因为通过instanceof函数可以判断。但函数又不像数组，你可以说数组是对象的一种，因为数组是对象的子集一样。但是函数与对象之间关系比较复杂。12345function Fn()&amp;#123;    this.name = &quot;温泽荣&quot;;    this.year = 1997;&amp;#125;var fn1 = new Fn(); 上面的例子很简单，它能说明对象可以通过函">
+<meta name="keywords" content="JavaScript,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入了解JavaScript原型和闭包——原型">
+<meta property="og:url" content="http://wzrblog.com/2017/12/18/A-deep-understanding-of-JavaScript-2/index.html">
 <meta property="og:site_name" content="愿做长风绕战旗">
-<meta property="og:description" content="一个没有干货的假技术博客">
+<meta property="og:description" content="函数就是对象对，函数就是对象，因为通过instanceof函数可以判断。但函数又不像数组，你可以说数组是对象的一种，因为数组是对象的子集一样。但是函数与对象之间关系比较复杂。12345function Fn()&amp;#123;    this.name = &quot;温泽荣&quot;;    this.year = 1997;&amp;#125;var fn1 = new Fn(); 上面的例子很简单，它能说明对象可以通过函">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ooghskq36.bkt.clouddn.com/pic1.png">
+<meta property="og:image" content="http://ooghskq36.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20171231040056.png">
+<meta property="og:updated_time" content="2017-12-30T20:22:09.400Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="愿做长风绕战旗">
-<meta name="twitter:description" content="一个没有干货的假技术博客">
+<meta name="twitter:title" content="深入了解JavaScript原型和闭包——原型">
+<meta name="twitter:description" content="函数就是对象对，函数就是对象，因为通过instanceof函数可以判断。但函数又不像数组，你可以说数组是对象的一种，因为数组是对象的子集一样。但是函数与对象之间关系比较复杂。12345function Fn()&amp;#123;    this.name = &quot;温泽荣&quot;;    this.year = 1997;&amp;#125;var fn1 = new Fn(); 上面的例子很简单，它能说明对象可以通过函">
+<meta name="twitter:image" content="http://ooghskq36.bkt.clouddn.com/pic1.png">
 
 
 
@@ -132,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://wzrblog.com/"/>
+  <link rel="canonical" href="http://wzrblog.com/2017/12/18/A-deep-understanding-of-JavaScript-2/"/>
 
 
 
 
 
-  <title>愿做长风绕战旗</title>
+  <title>深入了解JavaScript原型和闭包——原型 | 愿做长风绕战旗</title>
   
 
 
@@ -163,9 +168,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,9 +261,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -290,9 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/18/A-deep-understanding-of-JavaScript-2/" itemprop="url">深入了解JavaScript原型和闭包——原型</a></h1>
+          <h1 class="post-title" itemprop="name headline">深入了解JavaScript原型和闭包——原型</h1>
         
 
         <div class="post-meta">
@@ -364,9 +365,7 @@
       
 
       
-        
-          
-            <h1 id="函数就是对象"><a href="#函数就是对象" class="headerlink" title="函数就是对象"></a>函数就是对象</h1><p>对，函数就是对象，因为通过<code>instanceof</code>函数可以判断。<br>但函数又不像数组，你可以说数组是对象的一种，因为数组是对象的子集一样。但是函数与对象之间关系比较复杂。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">"温泽荣"</span>;</span><br><span class="line">    <span class="keyword">this</span>.year = <span class="number">1997</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn1 = <span class="keyword">new</span> Fn();</span><br></pre></td></tr></table></figure></p>
+        <h1 id="函数就是对象"><a href="#函数就是对象" class="headerlink" title="函数就是对象"></a>函数就是对象</h1><p>对，函数就是对象，因为通过<code>instanceof</code>函数可以判断。<br>但函数又不像数组，你可以说数组是对象的一种，因为数组是对象的子集一样。但是函数与对象之间关系比较复杂。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">"温泽荣"</span>;</span><br><span class="line">    <span class="keyword">this</span>.year = <span class="number">1997</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn1 = <span class="keyword">new</span> Fn();</span><br></pre></td></tr></table></figure></p>
 <p>上面的例子很简单，它能说明对象可以通过函数创建。<br>但我要说的是，<strong>对象都是通过函数创建的</strong>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>:<span class="number">10</span>,<span class="attr">b</span>:<span class="number">20</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>,<span class="string">'x'</span>,<span class="literal">true</span>];</span><br></pre></td></tr></table></figure></p>
 <p>没错，这是一种”快捷方式”，在编程语言中叫做语法糖（Syntactic sugar）。<br>其实，上面代码的本质是<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.a = <span class="number">10</span>;</span><br><span class="line">obj.b = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">5</span>;</span><br><span class="line">arr[<span class="number">1</span>] = <span class="string">'x'</span>;</span><br><span class="line">arr[<span class="number">2</span>] = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure></p>
 <p>其中的object和array都是函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="built_in">Object</span>)); <span class="comment">//function</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="built_in">Array</span>)); <span class="comment">//function</span></span><br></pre></td></tr></table></figure></p>
@@ -395,8 +394,6 @@
 </ul>
 <p>Function是函数，函数是对象，也有__proto<strong>属性。既然是函数，那它一定也是被Function创建，Function是被自身创建。所以它的\</strong>proto__指向了自身的prototype。</p>
 
-          
-        
       
     </div>
     
@@ -411,281 +408,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wzrblog.com/2017/12/10/A-deep-understanding-of-JavaScript-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vvzr">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="愿做长风绕战旗">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/10/A-deep-understanding-of-JavaScript-1/" itemprop="url">深入了解JavaScript原型和闭包——对象</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-10T23:46:34+08:00">
-                2017-12-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
-
+            <a href="/tags/前端/" rel="tag"># 前端</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h1 id="一切都是对象"><a href="#一切都是对象" class="headerlink" title="一切都是对象"></a>一切都是对象</h1><p>当然，也不是所有都是对象，值类型就不是对象。</p>
-<h2 id="什么是对象"><a href="#什么是对象" class="headerlink" title="什么是对象"></a>什么是对象</h2><p>首先，我们先看看我们的老朋友<code>typeof</code>，还有谁没用过？<br><code>typeof</code>函数输出的一共有几种类型，在此列出<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> x);    <span class="comment">// undefined</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="number">10</span>);   <span class="comment">// number</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">'abc'</span>); <span class="comment">// string</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">true</span>);  <span class="comment">// boolean</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    &#125;);  <span class="comment">//function</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> [<span class="number">1</span>, <span class="string">'a'</span>, <span class="literal">true</span>]);  <span class="comment">//object</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> &#123;<span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span>&#125;);  <span class="comment">//object</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">null</span>);  <span class="comment">//object</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">10</span>));  <span class="comment">//object</span></span><br><span class="line">&#125;</span><br><span class="line">show();</span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/10/A-deep-understanding-of-JavaScript-1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/10/A-deep-understanding-of-JavaScript-1/" rel="next" title="深入了解JavaScript原型和闭包——对象">
+                <i class="fa fa-chevron-left"></i> 深入了解JavaScript原型和闭包——对象
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wzrblog.com/2017/12/10/我的第一篇博客文章/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vvzr">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="愿做长风绕战旗">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/10/我的第一篇博客文章/" itemprop="url">我的第一篇博客文章</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-10T23:23:31+08:00">
-                2017-12-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h1><p>这是我的第一篇文章 :)</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -695,138 +449,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wzrblog.com/2017/12/10/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vvzr">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="愿做长风绕战旗">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/10/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-10T22:29:01+08:00">
-                2017-12-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -834,6 +461,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -854,8 +485,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -930,6 +570,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数就是对象"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x51FD;&#x6570;&#x5C31;&#x662F;&#x5BF9;&#x8C61;" class="headerlink" title="&#x51FD;&#x6570;&#x5C31;&#x662F;&#x5BF9;&#x8C61;"></a>&#x51FD;&#x6570;&#x5C31;&#x662F;&#x5BF9;&#x8C61;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x539F;&#x578B;" class="headerlink" title="&#x539F;&#x578B;"></a>&#x539F;&#x578B;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#隐式原型"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x9690;&#x5F0F;&#x539F;&#x578B;" class="headerlink" title="&#x9690;&#x5F0F;&#x539F;&#x578B;"></a>&#x9690;&#x5F0F;&#x539F;&#x578B;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x5BF9;&#x8C61;" class="headerlink" title="&#x5BF9;&#x8C61;"></a>&#x5BF9;&#x8C61;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#&#x51FD;&#x6570;" class="headerlink" title="&#x51FD;&#x6570;"></a>&#x51FD;&#x6570;</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1043,10 +699,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
