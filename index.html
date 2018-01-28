@@ -273,6 +273,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wzrblog.com/2018/01/26/token/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vvzr">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/26/token/" itemprop="url">基于vue.js, node.js+express+mongodb实现的token登录验证</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T15:12:13+08:00">
+                2018-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在部署项目时，因为之前测试时是使用cookie，但是在线上的话太不安全，很容易被伪造。本来想用session，但是想玩一下新东西，就查了一下关于token的资料，并且安装在我的项目中。</p>
+<h2 id="session-and-token"><a href="#session-and-token" class="headerlink" title="session and token"></a>session and token</h2><h3 id="session"><a href="#session" class="headerlink" title="session"></a>session</h3><p>session，即”会话”，当用户打开web应用时，例如登录的时候，便会产生一次session，并且将信息暂时存放到服务器上，并且经过默认时间后便会自动释放。session相对cookie来说比较安全。<br>但是，缺点也是很明显的，例如服务器重启，负载均衡在另一台服务器上，session都会丢失。</p>
+<h3 id="token"><a href="#token" class="headerlink" title="token"></a>token</h3><p>token，意思是”令牌”，是用户身份的验证方式。最简单的token组成为:uid+time+sign，即为用户的主键(唯一标识)，time为时间戳，sign签名，由加密算法与秘钥加密成不定长的十六进制字符串。同时也可以把不变的参数放进token，避免多次查库。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/26/token/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://wzrblog.com/2018/01/13/A-deep-understanding-of-JavaScript-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -896,7 +1044,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -918,7 +1066,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
