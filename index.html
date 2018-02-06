@@ -273,6 +273,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wzrblog.com/2018/02/06/A-quick-solution-to-the-zero-value-of-Document-body-scrollTop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vvzr">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/06/A-quick-solution-to-the-zero-value-of-Document-body-scrollTop/" itemprop="url">Document.body.scrollTop的值为0的解决办法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T16:10:32+08:00">
+                2018-02-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2><p>最近在做一个小项目的时候发现Chrome浏览器在获得document.body.scrollTop一直为0，查资料发现是DTD的问题。</p>
+<p>页面指定了DTD，即指定了DOCTYPE时，使用document.documentElement。</p>
+<p>页面没有DTD，即没指定DOCTYPE时，使用document.body。</p>
+<p>IE和Firefox都是如此。</p>
+<p>而我的页面加了&lt;!DOCTYPE html&gt;，所以如下即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/06/A-quick-solution-to-the-zero-value-of-Document-body-scrollTop/#далее" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://wzrblog.com/2018/01/26/token/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -370,7 +520,7 @@
 <h3 id="token"><a href="#token" class="headerlink" title="token"></a>token</h3><p>token，意思是”令牌”，是用户身份的验证方式。最简单的token组成为:uid+time+sign，即为用户的主键(唯一标识)，time为时间戳，sign签名，由加密算法与秘钥加密成不定长的十六进制字符串。同时也可以把不变的参数放进token，避免多次查库。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/26/token/#more" rel="contents">
+            <a class="btn" href="/2018/01/26/token/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -519,7 +669,7 @@
 <p>但是，如果直接调用该函数，就不一样了。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/13/A-deep-understanding-of-JavaScript-3/#more" rel="contents">
+            <a class="btn" href="/2018/01/13/A-deep-understanding-of-JavaScript-3/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -666,7 +816,7 @@
 <p><font color="#c7254e">手机版本 &gt; 手机 &gt; 数码产品</font><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/26/mongoDB-and-mongoose-To-achieve-unlimited-classification/#more" rel="contents">
+            <a class="btn" href="/2017/12/26/mongoDB-and-mongoose-To-achieve-unlimited-classification/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -813,7 +963,7 @@
 <p>上面的例子很简单，它能说明对象可以通过函数创建。<br>但我要说的是，<strong>对象都是通过函数创建的</strong>。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/18/A-deep-understanding-of-JavaScript-2/#more" rel="contents">
+            <a class="btn" href="/2017/12/18/A-deep-understanding-of-JavaScript-2/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -960,7 +1110,7 @@
 <h2 id="什么是对象"><a href="#什么是对象" class="headerlink" title="什么是对象"></a>什么是对象</h2><p>首先，我们先看看我们的老朋友<code>typeof</code>，还有谁没用过？<br><code>typeof</code>函数输出的一共有几种类型，在此列出<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> x);    <span class="comment">// undefined</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="number">10</span>);   <span class="comment">// number</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">'abc'</span>); <span class="comment">// string</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">true</span>);  <span class="comment">// boolean</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    &#125;);  <span class="comment">//function</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> [<span class="number">1</span>, <span class="string">'a'</span>, <span class="literal">true</span>]);  <span class="comment">//object</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> &#123;<span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span>&#125;);  <span class="comment">//object</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">null</span>);  <span class="comment">//object</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">10</span>));  <span class="comment">//object</span></span><br><span class="line">&#125;</span><br><span class="line">show();</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/10/A-deep-understanding-of-JavaScript-1/#more" rel="contents">
+            <a class="btn" href="/2017/12/10/A-deep-understanding-of-JavaScript-1/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1044,7 +1194,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1055,7 +1205,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
